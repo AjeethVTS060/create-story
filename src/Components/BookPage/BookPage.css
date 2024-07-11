@@ -1,0 +1,97 @@
+.book-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background-image: url("../../Assets/Images/freepik_br_24ee8917-a81b-4b0b-9a98-623d6d87dfa3.png");
+  padding: 20px;
+  background-size: cover; /* Cover ensures the image covers the entire background */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
+
+.page-left,
+.page-right {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-left {
+  transition: transform 1s ease-in-out;
+}
+
+.page-left.slide-down {
+  animation: slideDown 1s forwards;
+}
+
+.page-right {
+  backface-visibility: hidden;
+  transition: transform 1s ease-in-out;
+}
+
+.page-right.slide-up {
+  animation: slideUp 1s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.page-left p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.page-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green */
+}
