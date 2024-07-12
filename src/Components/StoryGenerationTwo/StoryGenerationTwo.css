@@ -15,7 +15,7 @@
 .story-generation h1 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: #000;
   font-family: 'Waltograph', fantasy;
   line-height: 1.5; /* Adjust line height for readability */
 }
@@ -32,7 +32,7 @@
 .story-generation label {
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
+  color: #000;
   font-family: 'Waltograph', fantasy;
 }
 

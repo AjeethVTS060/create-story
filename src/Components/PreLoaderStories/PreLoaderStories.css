@@ -6,6 +6,87 @@
   max-width: 800px; /* Limit maximum width for larger screens */
   margin: 0 auto; /* Center align on larger screens */
 }
+.stories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-height: 400px; /* Set a maximum height for the scrollable area */
+  overflow-y: auto;  
+  /* overflow-y: hidden;Enable vertical scrolling */
+  padding-right: 10px; /* Optional: Add some space on the right */
+}/* Hide scrollbar for webkit browsers */
+.stories::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for other browsers */
+.stories {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.story a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-family: 'Waltograph', fantasy;
+}
+
+.story a:hover {
+  background-color: #e5533d;
+}
+.story {
+  position: relative;
+  padding: 20px;
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../Assets/Images/Premium Photo _ Chibi characters two hearts with a heart.jpg');
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+              0 0 25px rgba(255, 255, 255, 0.5) inset; /* Add inset shadow for embossing effect */
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.story:hover {
+  animation: zoom 1s infinite alternate; /* Zoom in/out animation */
+  border-radius: 12px;
+   transform: scale(1.03);  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
+              0 0 25px rgba(255, 255, 255, 0.6) inset; /* Stronger inset shadow on hover */
+}
+
+
+
+.story-content {
+  opacity: 0;
+  transition: opacity 0.3s;
+  /* position: absolute; */
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-0%, -0%);
+  text-align: center;
+}
+
+.story:hover .story-content {
+  opacity: 1;
+}
 
 .pre-loaded-stories:hover {
   transform: translateY(-10px);
@@ -15,9 +96,26 @@
 .pre-loaded-stories h1 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: #000;
+  /* font-size: 15px; */
   font-family: 'Waltograph', fantasy;
   line-height: 1.5; /* Adjust line height for readability */
+}
+
+.age-filter {
+  margin-bottom: 20px;
+  text-align: center; /* Center the filter */
+}
+
+.age-filter label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.age-filter select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .pre-loaded-stories .stories {
@@ -43,14 +141,15 @@
 
 .pre-loaded-stories .story h2 {
   margin: 0 0 10px;
-  color: #555;
+  color: #fff;
+  font-size: 20px;
   font-family: 'Waltograph', fantasy;
   line-height: 1.4; /* Adjust line height for headings */
 }
 
 .pre-loaded-stories .story p {
   margin: 0 0 15px;
-  color: #777;
+  color: #fff;
   font-family: 'Waltograph', fantasy;
   line-height: 1.4; /* Adjust line height for paragraphs */
 }
