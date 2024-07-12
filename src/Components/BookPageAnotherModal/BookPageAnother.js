@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const BookPageAnother = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { story, images, storyLength } = location.state || { story: '', images: [], storyLength: '' };
+  const { story, images } = location.state || { story: '', images: [] };
   const [currentPage, setCurrentPage] = useState(0);
   const [isReading, setIsReading] = useState(false);
   const utteranceRef = useRef(null);
@@ -64,9 +64,9 @@ const BookPageAnother = () => {
     <div className="stories-page">
       <div className="book-page-1">
         <div className={`page-1 ${isReading ? 'turn-1' : ''}`}>
-        <div className="story-content">
-          <p>{pagesRef.current[currentPage]}</p>
-        </div>
+          <div className="story-content">
+            <p>{pagesRef.current[currentPage]}</p>
+          </div>
           <div className="page-content-1">
             <img src={images[currentPage]} alt={`Page ${currentPage + 1}`} />
           </div>
