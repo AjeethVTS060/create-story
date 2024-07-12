@@ -86,7 +86,7 @@ const BookPageAnother = () => {
     <div className="stories-page">
       <div className="book-page-1">
         <div className={`page-1 ${isReading ? 'turn-1' : ''}`}>
-          <div className="story-content">
+          <div className="story-content-new">
             <p>{pagesRef.current[currentPage]}</p>
           </div>
           <div className="page-content-1">

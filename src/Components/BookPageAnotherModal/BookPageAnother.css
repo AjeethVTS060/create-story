@@ -32,11 +32,11 @@
   height: 100%;
 }
 
-.story-content {
+.story-content-new {
   text-align: center;
 }
 
-.story-content p {
+.story-content-new p {
   font-size: 1.2rem;
   color: #000;
   line-height: 1.6; /* Adjust line height for readability */
@@ -72,7 +72,7 @@ button:hover {
     max-height: none; /* Allow height to adjust automatically */
   }
 
-  .story-content p {
+  .story-content-new p {
     font-size: 1rem; /* Adjust font size for smaller screens */
     line-height: 1.5; /* Adjust line height for readability on smaller screens */
   }
