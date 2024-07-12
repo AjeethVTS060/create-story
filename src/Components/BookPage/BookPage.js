@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FFmpeg } from '@ffmpeg/ffmpeg';
+// import { FFmpeg } from '@ffmpeg/ffmpeg';
 import jsPDF from 'jspdf';
 import './BookPage.css';
 
@@ -13,7 +13,7 @@ const BookPage = () => {
   const [isFlipping, setIsFlipping] = useState(false);
   const utteranceRef = useRef(null);
   const pages = story.split('\n\n');
-  const ffmpeg = useRef(new FFmpeg({ log: true }));
+  // const ffmpeg = useRef(new FFmpeg({ log: true }));
 
   // Define audio file URLs (replace with actual URLs)
   const audioFiles = images.map((_, index) => `https://example.com/audio/audio${index}.mp3`);
