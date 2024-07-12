@@ -18,7 +18,7 @@ const PreLoadedStories = () => {
           <div key={story.id} className="story">
             <h2>{story.title}</h2>
             <p>Age: {story.age}</p>
-            <Link to={`/book`}>Read Story</Link>
+            <Link to={`/`}>Read Story</Link>
           </div>
         ))}
       </div>

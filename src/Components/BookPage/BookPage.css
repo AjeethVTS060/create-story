@@ -95,3 +95,39 @@ button {
 button:hover {
   background-color: #45a049; /* Darker green */
 }
+
+@media (max-width: 768px) {
+  .book-page {
+    padding: 10px;
+  }
+
+  .page {
+    height: auto; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack pages vertically on smaller screens */
+  }
+
+  .page-left,
+  .page-right {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .page-left,
+  .page-right {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .page-left p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+.page-right img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .page-right img {
+    max-width: 100%; /* Adjust as needed for smaller screens */
+  }
+}

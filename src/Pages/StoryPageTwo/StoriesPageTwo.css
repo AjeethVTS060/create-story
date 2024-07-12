@@ -3,6 +3,7 @@
 body {
   font-family: 'Waltograph', fantasy;
   margin: 0;
+  background-color: #f0f0f0; /* Light background color for better readability */
 }
 
 @keyframes moveClouds {
@@ -12,13 +13,13 @@ body {
 
 .stories-page {
   display: flex;
-  margin: 0;
+  flex-direction: column; /* Adjusts to column on smaller screens */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Use min-height instead of height for responsiveness */
   gap: 20px;
   background: url('../../Assets/Images/anchal-spacing-background-aceb-ca-b-bdcdd.jpg') repeat-x;
-  background-size: contain;
+  background-size: cover; /* Adjust background size for better responsiveness */
   animation: moveClouds 30s linear infinite;
   padding: 20px;
 }
@@ -26,12 +27,14 @@ body {
 .left-panel,
 .right-panel {
   flex: 1;
+  width: 100%;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px; /* Space between panels */
 }
 
 .left-panel:hover,
@@ -45,14 +48,9 @@ body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .stories-page {
-    flex-direction: column;
-  }
-
-  .left-panel,
-  .right-panel {
-    margin: 0;
-    max-width: 100%;
+    flex-direction: row; /* Switch back to row layout for larger screens */
+    background-size: contain;
   }
 }
