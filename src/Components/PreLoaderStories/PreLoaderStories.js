@@ -7,7 +7,7 @@ const PreLoadedStories = () => {
     { id: 1, title: 'The Brave Little Toaster', age: '3-5' },
     { id: 2, title: 'The Magical Unicorn', age: '6-8' },
     { id: 3, title: 'The Space Adventure', age: '9-12' },
-    { id: 4, title: 'The Friendly Dragon', age: '3-5' },
+    { id: 4, title: 'The Friendly Dragon', age: '0-2' },
     { id: 5, title: 'The Enchanted Forest', age: '6-8' },
     { id: 6, title: 'Time Travel Tales', age: '9-12' },
     { id: 7, title: 'Learning with Shapes', age: '3-5' },
@@ -21,6 +21,10 @@ const PreLoadedStories = () => {
     { id: 15, title: 'Where Is Baby?', age: '0-2' },
     { id: 16, title: 'My First Words', age: '9-12' },
     { id: 17, title: 'Little Blue Truck', age: '0-2' },
+    { id: 18, title: 'The Very Hungry Caterpillar', age: '6-8' },
+    { id: 19, title: 'Where Is Baby?', age: '0-2' },
+    { id: 20, title: 'My First Words', age: '9-12' },
+    { id: 21, title: 'Little Blue Truck', age: '0-2' },
   ];
   
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
