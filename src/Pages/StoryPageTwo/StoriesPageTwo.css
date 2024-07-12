@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+body {
+  font-family: 'Waltograph', fantasy;
+  margin: 0;
+}
+
+@keyframes moveClouds {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.stories-page {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  background: url('../../Assets/Images/anchal-spacing-background-aceb-ca-b-bdcdd.jpg') repeat-x;
+  background-size: contain;
+  animation: moveClouds 30s linear infinite;
+  padding: 20px;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.left-panel:hover,
+.right-panel:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.left-panel h1,
+.right-panel h1 {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .stories-page {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    margin: 0;
+    max-width: 100%;
+  }
+}

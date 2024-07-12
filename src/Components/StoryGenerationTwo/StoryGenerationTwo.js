@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './StoryGeneration.css';
+import './StoryGenerationTwo.css';
 import image1 from '../../Assets/Images/123-(1).png'; // Adjust the path to your actual image location
 import image2 from '../../Assets/Images/123-(3).png';
 import image3 from '../../Assets/Images/123-(4).png';
 import image4 from '../../Assets/Images/123-(2).png';
 
-const StoryGeneration = () => {
+const StoryGenerationTwo = () => {
   const [age, setAge] = useState('');
   const [genre, setGenre] = useState('');
   const [characters, setCharacters] = useState('');
@@ -20,7 +20,7 @@ const StoryGeneration = () => {
     const generatedImages = [image1, image2, image3, image4];
 
     // Navigate to the BookPage with the generated story, images, and story length
-    navigate('/bookTwo', {
+    navigate('/book', {
       state: {
         story: generatedStory,
         images: generatedImages,
@@ -86,7 +86,7 @@ const StoryGeneration = () => {
   );
 };
 
-export default StoryGeneration;
+export default StoryGenerationTwo;
 
 
 
