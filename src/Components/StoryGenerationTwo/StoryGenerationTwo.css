@@ -1,66 +1,83 @@
 .story-generation {
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .story-generation:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 600px; /* Limit maximum width for larger screens */
+  margin: 0 auto; /* Center align on larger screens */
+}
+
+.story-generation:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.story-generation h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-family: 'Waltograph', fantasy;
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+.story-generation form {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-generation form > div {
+  margin-bottom: 15px;
+}
+
+.story-generation label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+  font-family: 'Waltograph', fantasy;
+}
+
+.story-generation input,
+.story-generation select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  font-family: 'Waltograph', fantasy;
+  font-size: 1rem; /* Set font size for all devices */
+  line-height: 1.4; /* Adjust line height for input fields */
+}
+
+.story-generation input:focus,
+.story-generation select:focus {
+  border-color: #007bff;
+}
+
+.story-generation button {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Waltograph', fantasy;
+  font-size: 1rem; /* Set font size for all devices */
+  line-height: 1.4; /* Adjust line height for button text */
+}
+
+.story-generation button:hover {
+  background-color: #e5533d;
+}
+
+@media (max-width: 768px) {
+  .story-generation {
+    padding: 15px; /* Adjust padding for smaller screens */
   }
   
   .story-generation h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
-    font-family: 'Waltograph', fantasy;
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    line-height: 1.3; /* Adjust line height for smaller screens */
   }
-  
-  .story-generation form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .story-generation form > div {
-    margin-bottom: 15px;
-  }
-  
-  .story-generation label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-    font-family: 'Waltograph', fantasy;
-  }
-  
-  .story-generation input,
-  .story-generation select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-    font-family: 'Waltograph', fantasy;
-  }
-  
-  .story-generation input:focus,
-  .story-generation select:focus {
-    border-color: #007bff;
-  }
-  
-  .story-generation button {
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: 'Waltograph', fantasy;
-  }
-  
-  .story-generation button:hover {
-    background-color: #e5533d;
-  }
-  
+}
