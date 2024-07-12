@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FFmpeg } from '@ffmpeg/ffmpeg';
+import jsPDF from 'jspdf';
 import './BookPage.css';
 
 const BookPage = () => {
@@ -11,6 +13,10 @@ const BookPage = () => {
   const [isFlipping, setIsFlipping] = useState(false);
   const utteranceRef = useRef(null);
   const pages = story.split('\n\n');
+  const ffmpeg = useRef(new FFmpeg({ log: true }));
+
+  // Define audio file URLs (replace with actual URLs)
+  const audioFiles = images.map((_, index) => `https://example.com/audio/audio${index}.mp3`);
 
   useEffect(() => {
     if (isReading) {
@@ -38,26 +44,44 @@ const BookPage = () => {
     setIsReading(true);
   };
 
+  const createPDF = async () => {
+    const pdf = new jsPDF();
+
+    pages.forEach((page, index) => {
+      pdf.text(page, 10, 10);
+      if (images[index]) {
+        pdf.addImage(images[index], 'PNG', 10, 20, 180, 160);
+      }
+      if (audioFiles[index]) {
+        pdf.textWithLink(`Audio for Page ${index + 1}`, 10, 180, { url: audioFiles[index] });
+      }
+      if (index < pages.length - 1) {
+        pdf.addPage();
+      }
+    });
+
+    pdf.save('story.pdf');
+  };
+
   return (
     <div className="stories-page">
-
-    <div className="book-page">
-      <div className="page">
-        <div className={`page-left ${isFlipping ? 'slide-down' : ''}`}>
-          <p>{pages[currentPage]}</p>
+      <div className="book-page">
+        <div className="page">
+          <div className={`page-left ${isFlipping ? 'slide-down' : ''}`}>
+            <p>{pages[currentPage]}</p>
+          </div>
+          <div className={`page-right ${isFlipping ? 'slide-up' : ''}`}>
+            <img src={images[currentPage]} alt={`Page ${currentPage + 1}`} />
+          </div>
         </div>
-        <div className={`page-right ${isFlipping ? 'slide-up' : ''}`}>
-          <img src={images[currentPage]} alt={`Page ${currentPage + 1}`} />
-        </div>
+        <button onClick={startReading} disabled={isReading}>
+          {isReading ? 'Reading...' : 'Start Reading'}
+        </button>
+        <button onClick={createPDF}>Download Story as PDF</button>
+        <button onClick={() => navigate('/')}>Go Back</button>
       </div>
-      <button onClick={startReading} disabled={isReading}>
-        {isReading ? 'Reading...' : 'Start Reading'}
-      </button>
-      <button onClick={() => navigate('/')}>Go Back</button>
-    </div>
     </div>
   );
 };
 
 export default BookPage;
-

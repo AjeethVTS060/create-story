@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './BookPageAnother.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import './BookPageAnother.css';
 
 const BookPageAnother = () => {
   const navigate = useNavigate();
@@ -56,6 +57,27 @@ const BookPageAnother = () => {
     setIsReading(false);
   };
 
+  const audioFiles = images.map((_, index) => `https://example.com/audio/audio${index}.mp3`); // Replace with actual URLs
+
+  const createPDF = () => {
+    const pdf = new jsPDF();
+
+    pagesRef.current.forEach((page, index) => {
+      pdf.text(page, 10, 10);
+      if (images[index]) {
+        pdf.addImage(images[index], 'PNG', 10, 20, 180, 160);
+      }
+      if (audioFiles[index]) {
+        pdf.textWithLink(`Audio for Page ${index + 1}`, 10, 180, { url: audioFiles[index] });
+      }
+      if (index < pagesRef.current.length - 1) {
+        pdf.addPage();
+      }
+    });
+
+    pdf.save('story.pdf');
+  };
+
   if (!story) {
     return <div>Loading...</div>;
   }
@@ -74,7 +96,8 @@ const BookPageAnother = () => {
         <button onClick={isReading ? stopReading : startReading}>
           {isReading ? 'Stop Reading' : 'Start Reading'}
         </button>
-        <button onClick={() => navigate('/homeTwo')}>Go Next</button>
+        <button onClick={createPDF}>Download PDF with Audio Links</button>
+        <button onClick={() => navigate('/homeTwo')}>Go Next Book Template</button>
       </div>
     </div>
   );
