@@ -8,6 +8,8 @@ import BookPage from "./Components/BookPage/BookPage"
 import BookPageTwo from './Components/BookPageAnotherModal/BookPageAnother';
 import './App.css';
 import StoriesPageTwo from './Pages/StoryPageTwo/StoriesPageTwo';
+import Sidebar from './Components/Sidebar/Sidebar';
+import StoriesGrid from "./Components/TabCardNew"
 
 
 function App() {
@@ -15,12 +17,15 @@ function App() {
     <Router>
       <div className="App">
       {/* <h1>AI Storybook</h1> */}
+      <Sidebar />
+      <div className="content">
         <Routes>
           <Route path="/generate" element={<StoryGeneration />} />
           <Route path="/generateTwo" element={<StoryGenerationTwo />} />
           <Route path="/pre-loaded" element={<PreLoadedStories />} />
           <Route path="/" exact element={<StoriesPage />} />
           <Route path="/homeTwo" exact element={<StoriesPageTwo />} />
+          <Route path="/stories" exact element={<StoriesGrid />} />
           <Route path="/book" element={<BookPage/>} />
           <Route path="/bookTwo" element={<BookPageTwo/>} />
           <Route path="/landing" element={
@@ -33,6 +38,7 @@ function App() {
             </div>
           } />
         </Routes>
+        </div>
       </div>
     </Router>
   );

@@ -11,6 +11,7 @@ const StoryGeneration = () => {
   const [genre, setGenre] = useState('');
   const [characters, setCharacters] = useState('');
   const [voiceTone, setVoiceTone] = useState('');
+  const [imageStyle, setImageStyle] = useState('');
   const [storyLength, setStoryLength] = useState('');
   const navigate = useNavigate();
 
@@ -37,9 +38,13 @@ const StoryGeneration = () => {
           <label>Age:</label>
           <select value={age} onChange={(e) => setAge(e.target.value)}>
             <option value="">Select Age</option>
+            <option value="3-5">0-1</option>
+            <option value="3-5">1-3</option>
             <option value="3-5">3-5</option>
-            <option value="6-8">6-8</option>
-            <option value="9-12">9-12</option>
+            <option value="5-8">5-8</option>
+            <option value="8-12">8-12</option>
+            <option value="above">Age 12 and above</option>
+
           </select>
         </div>
         <div>
@@ -58,6 +63,7 @@ const StoryGeneration = () => {
             type="text"
             placeholder="Enter character names"
             value={characters}
+            style={{width:"100%"}}
             onChange={(e) => setCharacters(e.target.value)}
           />
         </div>
@@ -68,6 +74,15 @@ const StoryGeneration = () => {
             <option value="Joyful">Joyful</option>
             <option value="Serious">Serious</option>
             <option value="Excited">Excited</option>
+          </select>
+        </div>
+        <div>
+          <label>Image Style:</label>
+          <select value={voiceTone} onChange={(e) => setVoiceTone(e.target.value)}>
+            <option value="">Select Image Style</option>
+            <option value="natural">Natural</option>
+            <option value="vivid">Vivid</option>
+            {/* <option value="Excited">Excited</option> */}
           </select>
         </div>
         <div>
