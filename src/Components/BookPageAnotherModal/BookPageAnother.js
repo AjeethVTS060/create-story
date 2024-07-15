@@ -93,11 +93,11 @@ const BookPageAnother = () => {
             <img src={images[currentPage]} alt={`Page ${currentPage + 1}`} />
           </div>
         </div>
-        <button onClick={isReading ? stopReading : startReading}>
+        <button  className='btn-book' onClick={isReading ? stopReading : startReading}>
           {isReading ? 'Stop Reading' : 'Start Reading'}
         </button>
-        <button onClick={createPDF}>Download PDF with Audio Links</button>
-        <button onClick={() => navigate('/homeTwo')}>Go Next Book Template</button>
+        <button  className='btn-book'  onClick={createPDF}>Download PDF with Audio Links</button>
+        <button  className='btn-book'onClick={() => navigate('/homeTwo')}>Go Next Book Template</button>
       </div>
     </div>
   );

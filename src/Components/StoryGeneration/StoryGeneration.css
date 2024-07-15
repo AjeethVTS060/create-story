@@ -5,6 +5,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   max-width: 600px; /* Limit maximum width for larger screens */
   margin: 0 auto; /* Center align on larger screens */
+  font-family: 'Waltograph', fantasy; /* Default font */
 }
 
 .story-generation:hover {
@@ -16,7 +17,6 @@
   text-align: center;
   margin-bottom: 25px;
   color: #000;
-  font-family: 'Waltograph', fantasy;
   line-height: 1.5; /* Adjust line height for readability */
 }
 
@@ -33,7 +33,6 @@
   margin-bottom: 5px;
   font-weight: bold;
   color: #000;
-  font-family: 'Waltograph', fantasy;
 }
 
 .story-generation input,
@@ -44,7 +43,6 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s;
-  font-family: 'Waltograph', fantasy;
   font-size: 1rem; /* Set font size for all devices */
   line-height: 1.4; /* Adjust line height for input fields */
 }
@@ -62,7 +60,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: 'Waltograph', fantasy;
   font-size: 1rem; /* Set font size for all devices */
   line-height: 1.4; /* Adjust line height for button text */
 }
@@ -71,13 +68,43 @@
   background-color: #e5533d;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   .story-generation {
     padding: 15px; /* Adjust padding for smaller screens */
   }
-  
+
   .story-generation h1 {
     font-size: 1.5rem; /* Adjust font size for smaller screens */
     line-height: 1.3; /* Adjust line height for smaller screens */
+  }
+
+  .story-generation input,
+  .story-generation select {
+    font-size: 0.9rem; /* Smaller font size for inputs and selects */
+  }
+
+  .story-generation button {
+    font-size: 0.9rem; /* Smaller font size for button */
+  }
+}
+
+@media (max-width: 480px) {
+  .story-generation {
+    padding: 10px; /* Further adjust padding for mobile */
+  }
+
+  .story-generation h1 {
+    font-size: 1.2rem; /* Further reduce font size */
+  }
+
+  .story-generation input,
+  .story-generation select {
+    font-size: 0.85rem; /* Further reduce font size */
+  }
+
+  .story-generation button {
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 0.85rem; /* Further reduce font size */
   }
 }

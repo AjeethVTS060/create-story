@@ -47,7 +47,7 @@
   height: auto;
 }
 
-button {
+.btn-book {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -59,7 +59,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.btn-book:hover {
   background-color: #45a049;
 }
 

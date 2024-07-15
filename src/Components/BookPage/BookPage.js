@@ -74,11 +74,11 @@ const BookPage = () => {
             <img src={images[currentPage]} alt={`Page ${currentPage + 1}`} />
           </div>
         </div>
-        <button onClick={startReading} disabled={isReading}>
+        <button onClick={startReading} className='btn-book' disabled={isReading}>
           {isReading ? 'Reading...' : 'Start Reading'}
         </button>
-        <button onClick={createPDF}>Download Story as PDF</button>
-        <button onClick={() => navigate('/')}>Go Back</button>
+        <button onClick={createPDF} className='btn-book'>Download Story as PDF</button>
+        <button onClick={() => navigate('/')} className='btn-book'>Go Back</button>
       </div>
     </div>
   );

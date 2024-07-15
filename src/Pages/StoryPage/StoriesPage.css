@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
-
 body {
   font-family: 'Waltograph', fantasy;
   margin: 0;
-  background-color: #f0f0f0; /* Light background color for better readability */
+  background-color: #f0f0f0;
 }
 
 @keyframes moveClouds {
@@ -13,13 +11,13 @@ body {
 
 .stories-page {
   display: flex;
-  flex-direction: column; /* Adjusts to column on smaller screens */
+  flex-direction: column; /* Default to column on mobile */
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Use min-height instead of height for responsiveness */
+  min-height: 100vh;
   gap: 20px;
   background: url('../../Assets/Images/anchal-spacing-background-aceb-ca-b-bdcdd.jpg') repeat-x;
-  background-size: cover; /* Adjust background size for better responsiveness */
+  background-size: cover;
   animation: moveClouds 30s linear infinite;
   padding: 20px;
 }
@@ -29,12 +27,12 @@ body {
   flex: 1;
   width: 100%;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque */
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  margin-bottom: 20px; /* Space between panels */
+  margin-bottom: 20px;
 }
 
 .left-panel:hover,
@@ -46,11 +44,31 @@ body {
 .left-panel h1,
 .right-panel h1 {
   text-align: center;
+  line-height: 1.4; /* Adjust line height for readability */
 }
 
 @media (min-width: 768px) {
   .stories-page {
-    flex-direction: row; /* Switch back to row layout for larger screens */
+    flex-direction: row; /* Switch to row layout for larger screens */
     background-size: contain;
+    padding: 40px; /* More padding for larger screens */
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 0 1 calc(50% - 20px); /* Each panel takes 50% minus space */
+    margin: 0 10px; /* Adjust margins */
+  }
+}
+
+@media (max-width: 600px) {
+  .left-panel,
+  .right-panel {
+    padding: 15px; /* Reduce padding for smaller devices */
+  }
+
+  .left-panel h1,
+  .right-panel h1 {
+    font-size: 1.5rem; /* Adjust heading size */
   }
 }
