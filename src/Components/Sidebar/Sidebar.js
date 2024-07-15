@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaBook, FaCog, FaInfoCircle, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
+import {  FaBook,  FaInfoCircle, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import './Sidebar.css';
 import { MdWebStories } from "react-icons/md";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 // import logo from './logo.png';
+// FaCog,FaHome
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);

@@ -78,7 +78,7 @@ const StoryGeneration = () => {
         </div>
         <div>
           <label>Image Style:</label>
-          <select value={voiceTone} onChange={(e) => setVoiceTone(e.target.value)}>
+          <select value={imageStyle} onChange={(e) => setImageStyle(e.target.value)}>
             <option value="">Select Image Style</option>
             <option value="natural">Natural</option>
             <option value="vivid">Vivid</option>

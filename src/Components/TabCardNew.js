@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import styled, { keyframes, css } from "styled-components";
 import tw from "twin.macro";
 import { Container, ContentWithPaddingXl } from "../Components/misc/Layouts.js";
-import { SectionHeading, Subheading as SubheadingBase } from "../Components/misc/Headings.js";
+import { SectionHeading } from "../Components/misc/Headings.js";
 import { SectionDescription } from "../Components/misc/Typography.js";
 import { PrimaryButton as PrimaryButtonBase } from "../Components/misc/Buttons.js";
 import backgroundImage from "../Assets/Images/anchal-spacing-background-aceb-ca-b-bdcdd.jpg"; // Import the background image
 
-const HeaderRow = tw.div`flex flex-col xl:flex-row justify-between items-center`;
-const Header = tw(SectionHeading)``;
+// const HeaderRow = tw.div`flex flex-col xl:flex-row justify-between items-center`;
+// const Header = tw(SectionHeading)``;
 const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2  mb-10 leading-none mt-12 xl:mt-4 w-full`;
 const HeaderContainer = tw.div`mt-10 w-full flex flex-col items-center`;
-const Subheading = tw(SubheadingBase)`mb-4 text-red-900 font-bold`;
+// const Subheading = tw(SubheadingBase)`mb-4 text-red-900 font-bold`;
 const Heading = tw(SectionHeading)`w-full text-blue-500`;
 const Description = tw(SectionDescription)`w-full text-white text-center`;
 
@@ -39,12 +39,12 @@ const CardImageContainer = styled.div`
 // Rest of your code...
 
 const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
-const CardRating = styled.div`
-  ${tw`mr-1 text-sm font-bold flex items-end`}
-  svg {
-    ${tw`w-4 h-4 fill-current text-orange-400 mr-1`}
-  }
-`;
+// const CardRating = styled.div`
+//   ${tw`mr-1 text-sm font-bold flex items-end`}
+//   svg {
+//     ${tw`w-4 h-4 fill-current text-orange-400 mr-1`}
+//   }
+// `;
 
 const CardHoverOverlay = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.5);
@@ -56,7 +56,7 @@ const CardReview = tw.div`font-medium text-xs text-gray-600`;
 const CardText = tw.div`p-4 text-gray-900`;
 const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
-const CardPrice = tw.p`mt-4 text-xl font-bold`;
+// const CardPrice = tw.p`mt-4 text-xl font-bold`;
 
 const moveClouds = keyframes`
   0% { background-position: 0 0; }
@@ -72,7 +72,7 @@ const Background = styled.div`
 `;
 
 
-export default ({
+const StoryTabs = ({
   heading = "AI generated stories for kids",
   description = "Explore last weeks top AI generated stories by the awesome AI Story Generator",
   tabs = {
@@ -147,7 +147,6 @@ export default ({
                 >
                   <CardImageContainer imageSrc={card.imageSrc}>
                     <CardRatingContainer>
-                      {/* <CardRating>{card.rating}</CardRating> */}
                       <CardReview>({card.reviews})</CardReview>
                     </CardRatingContainer>
                     <CardHoverOverlay
@@ -179,6 +178,9 @@ export default ({
     </Container>
   );
 };
+
+export default StoryTabs;
+
 
 /* This function is only there for demo purposes. It populates placeholder cards */
 const getRandomCards = (genre) => {
