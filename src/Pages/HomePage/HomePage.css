@@ -1,0 +1,156 @@
+.full {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+#hero {
+    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+}
+
+#hero h2 {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin: 10px 0 20px;
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.cta-button:hover {
+    background-color: #ff3300;
+}
+
+#stories {
+    padding: 20px;
+}
+
+.story-card {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+.story-card:hover {
+    transform: scale(1.05);
+}
+
+.story-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+#story1 {
+    background-image: url('../../Assets/Images/cute-ai-generated-cartoon-bunny.png');
+}
+
+#story2 {
+    background-image: url('../../Assets/Images/4262432.jpg');
+}
+
+#story3 {
+    background-image: url('../../Assets/Images/rendering-cartoon-fantasy-scene-with-boy.jpg');
+}
+
+#story4 {
+    background-image: url('../../Assets/Images/happy-mothers-day-celebration.jpg');
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+#ai-story-generator {
+    padding: 20px;
+    background-color: #e0f7fa;
+}
+
+#ai-story-generator h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#ai-story-generator p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.ai-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* .butterfly {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../Assets/Images/colorful-butterfly-cartoon-illustration.png');
+    background-size: cover;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    transition: transform 0.1s linear;
+} */

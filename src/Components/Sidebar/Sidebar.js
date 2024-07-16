@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {  FaBook,  FaInfoCircle, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import './Sidebar.css';
 import { MdWebStories } from "react-icons/md";
@@ -8,6 +8,7 @@ import { FaWandMagicSparkles } from "react-icons/fa6";
 // FaCog,FaHome
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -21,13 +22,13 @@ const Sidebar = () => {
         <button className="toggle-button" onClick={toggleSidebar}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-        {isOpen && <div className="logo">AI Story Generator</div>}
+        {isOpen && <div className="logo" onClick={()=> navigate("/")}>AI Story Generator</div>}
 
       </div>
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/dashboard">
               {/* <FaHome /> */}
               <FaWandMagicSparkles />
               {isOpen && <span>Create</span>}
@@ -58,7 +59,7 @@ const Sidebar = () => {
       <div className="sidebar-footer">
         <button className="logout-button">
           <FaSignOutAlt />
-          {isOpen && <span>Logout</span>}
+          {isOpen && <span onClick={()=> navigate("/")}>Logout</span>}
         </button>
       </div>
     </div>

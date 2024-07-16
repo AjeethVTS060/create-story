@@ -34,6 +34,7 @@
   text-align: center;
   color: orange;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .toggle-button {
@@ -66,7 +67,8 @@ background-color: #152238;
 
 .sidebar-nav ul li {
   width: 100%;
-  margin: 10px 0;
+  margin: 12px 10px;
+  /* padding: 10px; */
   display: flex;
   justify-content: center;
 }

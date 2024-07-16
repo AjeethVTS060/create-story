@@ -1,0 +1,68 @@
+/* TermsAndCondition.css */
+.terms-header {
+    background-color: #f8f9fa;
+    /* padding: 20px; */
+   padding-top: 10%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .terms-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+  }
+.terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p, ul {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .terms-action {
+    display: flex;
+    /* align-items: center; */
+    margin-top: 40px;
+  }
+  
+  .terms-action input {
+    margin-right: 10px;
+  }
+  
+  .accept-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .accept-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  

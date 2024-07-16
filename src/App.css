@@ -1,11 +1,11 @@
-.App {
+/* .App {
   display: flex;
-}
+} */
 
 .content {
   flex-grow: 1;
   /* padding: 20px; */
-  margin-left: 60px;
+  /* margin-left: 60px; */
   transition: margin-left 0.3s ease;
 }
 
@@ -22,7 +22,7 @@
     margin-left: 200px;
   }
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -56,10 +56,7 @@
   to {
     transform: rotate(360deg);
   }
-}
-.App {
-  text-align: center;
-}
+} */
 
 .App h1 {
   margin: 20px 0;
