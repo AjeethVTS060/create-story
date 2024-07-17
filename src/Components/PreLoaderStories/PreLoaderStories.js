@@ -26,9 +26,9 @@ const PreLoadedStories = () => {
     { id: 20, title: 'My First Words', age: '9-12' },
     { id: 21, title: 'Little Blue Truck', age: '0-2' },
   ];
-  
+
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
-  const ageGroups = ['all','0-2', '3-5', '6-8', '9-12'];
+  const ageGroups = ['all', '0-2', '3-5', '6-8', '9-12'];
 
   const filteredStories = selectedAgeGroup === 'all' 
     ? stories 
