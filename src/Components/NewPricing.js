@@ -142,9 +142,9 @@ const defaultPlans = [
 const PricingSection = ({
   subheading = "Pricing",
   heading = "Flexible Plans",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "Explore our flexible plans and choose the one that best fits your needs. Enjoy unlimited story creation with our advanced AI technology.",
   plans = defaultPlans,
-  primaryButtonText = "Buy Now",
+  primaryButtonText = "Get Started",
 }) => {
   const highlightGradientsCss = [
     css`

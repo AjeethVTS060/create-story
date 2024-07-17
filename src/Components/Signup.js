@@ -3,9 +3,7 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "../Components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
-// import { css } from "styled-components/macro"; //eslint-disable-line
-import illustration from "images/signup-illustration.svg";
-import logo from "images/logo.svg";
+import illustration from "images/rendering-cartoon-fantasy-scene-illustration.png";
 import googleIconImageSrc from "images/google-icon.png";
 import twitterIconImageSrc from "images/twitter-icon.png";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
@@ -13,8 +11,7 @@ import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
-const LogoLink = tw.a``;
-const LogoImage = tw.img`h-12 mx-auto`;
+const LogoLink = tw.a`text-xl font-bold text-orange-500`;
 const MainContent = tw.div`mt-12 flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
 const FormContainer = tw.div`w-full flex-1 mt-8`;
@@ -53,7 +50,7 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-export default ({
+const SignUp = ({
   logoLinkUrl = "#",
   illustrationImageSrc = illustration,
   headingText = "Sign Up",
@@ -71,8 +68,8 @@ export default ({
   ],
   submitButtonText = "Sign Up",
   SubmitButtonIcon = SignUpIcon,
-  tosUrl = "/signUp",
-  privacyPolicyUrl = "/privacyPolicy",
+  tosUrl = "/termsAndCondition",
+  privacyPolicyUrl = "/privacyCenter",
   signInUrl = "/login"
 }) => (
   <AnimationRevealPage>
@@ -81,6 +78,7 @@ export default ({
         <MainContainer>
           <LogoLink href={logoLinkUrl}>
             {/* <LogoImage src={logo} /> */}
+            AI Story Generator
           </LogoLink>
           <MainContent>
             <Heading>{headingText}</Heading>
@@ -105,21 +103,22 @@ export default ({
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>
                 </SubmitButton>
-                <p tw="mt-6 text-xs text-gray-600 text-center">
-                  I agree to abide by treact's{" "}
-                  <a href={tosUrl} tw="border-b border-gray-500 border-dotted">
-                    Terms of Service
+                <p style={{margin:"10px"}} tw="mt-6 text-xs text-gray-600 text-center">
+                  I agree to abide by AI Story Generator{" "}
+                  <a href={tosUrl} tw="border-b border-gray-500 font-bold text-orange-700 border-dotted">
+                    <span style={{fontWeight:"bold",color:"#ff6600"}}> Terms of Service</span>
                   </a>{" "}
                   and its{" "}
                   <a href={privacyPolicyUrl} tw="border-b border-gray-500 border-dotted">
-                    Privacy Policy
+                  <span style={{fontWeight:"bold",color:"#ff6600"}}>Privacy Policy</span>
+
                   </a>
                 </p>
 
-                <p tw="mt-8 text-sm text-gray-600 text-center">
+                <p style={{margin:"10px"}} tw="mt-8 text-sm text-gray-600 text-center">
                   Already have an account?{" "}
                   <a href={signInUrl} tw="border-b border-gray-500 border-dotted">
-                    Sign In
+                  <span style={{fontWeight:"bold",color:"#ff6600"}}>Sign In</span>
                   </a>
                 </p>
               </Form>
@@ -133,3 +132,5 @@ export default ({
     </Container>
   </AnimationRevealPage>
 );
+
+export default SignUp;

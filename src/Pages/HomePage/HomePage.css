@@ -1,35 +1,61 @@
-.full {
-    width: 100%;
-    height: 100vh;
-    position: relative;
+/* HomePage.css */
+
+/* CSS Variables for Consistency */
+:root {
+    --main-bg-color: #ffcc00;
+    --secondary-bg-color: #ff6600;
+    --text-color: #333;
+    --cta-bg-color: #ff6600;
+    --cta-hover-bg-color: #ff3300;
+    --header-padding: 20px;
+    --header-font-size: 2.5em;
+    --hero-padding: 50px 20px;
+    --hero-font-size: 2em;
+    --cta-font-size: 1.2em;
+    --card-width: 45%;
+    --card-margin: 10px;
+    --card-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --card-radius: 10px;
 }
 
-.hero-text {
-    text-align: center;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
+/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f8ff;
-    color: #333;
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
 header {
-    background-color: #ffcc00;
+    background-color: var(--main-bg-color);
     text-align: center;
-    padding: 20px 0;
+    padding: var(--header-padding) 0;
+    position: relative;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: var(--header-font-size);
+}
+
+.monkey-image {
+    position: absolute;
+    /* top: 100px; Adjust this value as needed */
+    right: 0;
+    z-index: 1;
+    width: 350px; /* Adjust size as needed */
+    height: auto;
+    animation: swing 5s linear infinite;
+    transform-origin: top center;
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(8deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-8deg); }
+    100% { transform: rotate(0deg); }
 }
 
 main {
@@ -38,15 +64,15 @@ main {
 }
 
 #hero {
-    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+    background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color));
     color: white;
-    padding: 50px 20px;
+    padding: var(--hero-padding);
     position: relative;
 }
 
 #hero h2 {
     margin-top: 20px;
-    font-size: 2em;
+    font-size: var(--hero-font-size);
 }
 
 #hero p {
@@ -55,16 +81,16 @@ main {
 }
 
 .cta-button {
-    background-color: #ff6600;
+    background-color: var(--cta-bg-color);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: var(--cta-font-size);
 }
 
 .cta-button:hover {
-    background-color: #ff3300;
+    background-color: var(--cta-hover-bg-color);
 }
 
 #stories {
@@ -73,11 +99,11 @@ main {
 
 .story-card {
     display: inline-block;
-    width: 45%;
-    margin: 10px;
+    width: var(--card-width);
+    margin: var(--card-margin);
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: var(--card-box-shadow);
+    border-radius: var(--card-radius);
     overflow: hidden;
     transform: perspective(1px) translateZ(0);
     transition: transform 0.25s ease-out;
@@ -109,6 +135,7 @@ main {
 #story4 {
     background-image: url('../../Assets/Images/happy-mothers-day-celebration.jpg');
 }
+
 
 footer {
     background-color: #333;
@@ -143,14 +170,118 @@ footer p {
     flex-wrap: wrap;
 }
 
-/* .butterfly {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    background-image: url('../../Assets/Images/colorful-butterfly-cartoon-illustration.png');
+.background-image-pricing {
+    background-image: url('../../Assets/Images/man-is-standing-cliff-with-castle-top-it.jpg');
     background-size: cover;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    transition: transform 0.1s linear;
-} */
+    background-repeat: no-repeat;
+    color: white;
+    /* padding: 0; */
+}
+
+
+.header-buttons {
+    margin-top: 20px;
+}
+
+.header-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #ff3300;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .monkey-image {
+        top: 80px;
+        width: 120px;
+    }
+
+    #hero h2 {
+        font-size: 1.8em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+    }
+
+    .story-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .monkey-image {
+        top: 60px;
+        width: 100px;
+    }
+
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .story-card {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #hero {
+        padding: 30px 10px;
+    }
+    .header-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .monkey-image {
+        top: 50px;
+        width: 80px;
+    }
+
+    #hero h2 {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    .story-card {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #hero {
+        padding: 20px 10px;
+    }
+}

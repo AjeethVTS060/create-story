@@ -1,76 +1,37 @@
-/* .App {
-  display: flex;
-} */
-
+/* Common styles */
 .content {
   flex-grow: 1;
-  /* padding: 20px; */
-  /* margin-left: 60px; */
   transition: margin-left 0.3s ease;
 }
 
-.sidebar.open + .content {
+/* Styles for pages with sidebar */
+.with-sidebar .content {
+  margin-left: 60px;
+}
+
+.with-sidebar .sidebar.open + .content {
   margin-left: 250px;
 }
 
 @media (max-width: 768px) {
-  .content {
+  .with-sidebar .content {
     margin-left: 60px;
   }
 
-  .sidebar.open + .content {
+  .with-sidebar .sidebar.open + .content {
     margin-left: 200px;
   }
 }
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Styles for pages without sidebar */
+.without-sidebar .content {
+  /* padding: 20px; Example padding, adjust as needed */
+  margin-left: 0; /* Ensure no margin-left when sidebar is not present */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
+/* Additional styles (unrelated to sidebar) */
 .App h1 {
   margin: 20px 0;
-}
-
-.App a {
-  display: inline-block;
-  padding: 0px 0px;
-  margin: 10px;
-  /* background-color: #007bff; */
-  color: #fff;
-  /* border-radius: 4px; */
-  text-decoration: none;
-  transition: background-color 0.3s;
 }
 
 .App a:hover {

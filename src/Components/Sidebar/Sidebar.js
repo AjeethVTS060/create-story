@@ -49,9 +49,9 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/about">
+            <Link to="/contact">
               <FaInfoCircle />
-              {isOpen && <span>About</span>}
+              {isOpen && <span>Contact Us</span>}
             </Link>
           </li>
         </ul>
