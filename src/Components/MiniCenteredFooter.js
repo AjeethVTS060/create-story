@@ -34,7 +34,7 @@ const MiniCenteredFooter = () => {
           </LogoContainer>
           <LinksContainer>
             <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
+            {/* <Link href="/about">About Us</Link> */}
             <Link href="/contact">Contact Us</Link>
             <Link href="/privacyCenter">Privacy Policy</Link>
             <Link href="/securityCenter">Security Center</Link>

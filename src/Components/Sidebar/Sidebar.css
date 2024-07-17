@@ -1,10 +1,8 @@
-/* Sidebar.css */
-
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px; /* Width for the open state */
+  width: 60px; /* Width for the closed state */
   height: 100%;
   background-color: #152238;
   transition: width 0.3s ease;
@@ -12,18 +10,17 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   padding: 20px 0;
 }
 
-.sidebar.closed {
-  width: 60px; /* Width for the closed state */
+.sidebar:hover {
+  width: 250px; /* Width for the open state */
 }
 
 .sidebar-header {
   width: 100%;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
@@ -35,6 +32,11 @@
   color: orange;
   margin-top: 20px;
   cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.sidebar:hover .logo {
+  display: block; /* Show on hover */
 }
 
 .toggle-button {
@@ -46,14 +48,14 @@
   z-index: 1001;
   font-size: 24px; /* Increase icon size */
 }
-/* .toggle-button :hover{
-background-color: #152238;
-} */
+
 .sidebar-nav {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
+  margin-top: 50px;
 }
 
 .sidebar-nav ul {
@@ -67,8 +69,7 @@ background-color: #152238;
 
 .sidebar-nav ul li {
   width: 100%;
-  margin: 12px 10px;
-  /* padding: 10px; */
+  margin: 20px 0; /* Adjusted margin for better spacing */
   display: flex;
   justify-content: center;
 }
@@ -79,31 +80,25 @@ background-color: #152238;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 30px; /* Consistent height */
-  background-image: url("../../Assets/Images/rendering-cartoon-fantasy-scene-illustration.jpg");
+  width: 80%;
+  height: 40px; /* Increased height for better click area */
+  background-color: rgba(255, 255, 255, 0.1); /* Background color for better visibility */
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .sidebar-nav ul li a:hover {
-  background-color: #444;
+  background-color: rgba(255, 255, 255, 0.2);
   animation: shake 0.5s; /* Add shake animation */
   animation: zoom 0.5s forwards; /* Add zoom animation */
 }
 
 .sidebar-nav ul li a span {
-  margin-left: 10px;
-}
-.sidebar-nav ul li a .custom-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px; /* Adjust the margin as needed */
+  display: none; /* Hide title by default */
 }
 
-
-.sidebar.closed ul li a span {
-  display: none;
+.sidebar:hover ul li a span {
+  display: inline-block; /* Show title when expanded */
 }
 
 .sidebar-footer {
@@ -119,7 +114,7 @@ background-color: #152238;
   border: none;
   padding: 10px;
   cursor: pointer;
-  width: 100%;
+  width: 80%; /* Keep width for proper alignment */
   display: flex;
   gap: 10px;
   align-items: center;
@@ -129,20 +124,40 @@ background-color: #152238;
 }
 
 .logout-button:hover {
-  background-color: #444;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-footer span {
+  display: none; /* Hide title by default */
+}
+
+.sidebar:hover .sidebar-footer span {
+  display: inline-block; /* Show title when expanded */
 }
 
 .sidebar.closed .logout-button span {
-  display: none;
+  display: inline-block; /* Show title when collapsed */
 }
 
 @media (max-width: 768px) {
   .sidebar {
+    width: 60px; /* Width for the closed state */
+  }
+
+  .sidebar:hover {
     width: 200px; /* Adjust width for smaller screens */
   }
 
-  .sidebar.closed {
-    width: 60px;
+  .logo {
+    font-size: 14px; /* Adjust logo font size for smaller screens */
+  }
+
+  .sidebar-nav ul li a {
+    height: 35px; /* Adjust height for smaller screens */
+  }
+
+  .logout-button {
+    font-size: 14px; /* Adjust button font size for smaller screens */
   }
 }
 
