@@ -31,6 +31,7 @@ const HomePage = () => {
             </header>
             <main>
                 <section id="hero">
+                    <div style={{marginTop:"50px"}}>
                     <div id="hero-animation">
                         <RotatingCube />
                     </div>
@@ -39,6 +40,7 @@ const HomePage = () => {
                     <a href="/login" className="cta-button">
                         Explore Stories
                     </a>
+                    </div>
                 </section>
                 <section id="stories">
                     {/* Stories content */}
@@ -86,15 +88,16 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <div className='background-image-pricing'>
-                    <section id="pricing">
-                        <Pricing />
-                    </section>
-                    <section id="faq">
-                        <FAQ />
-                    </section>
-                </div>
+               
             </main>
+            <div className='background-image-pricing'>
+                    <div id="pricing">
+                        <Pricing />
+                    </div>
+                    <div id="faq">
+                        <FAQ />
+                    </div>
+                </div>
             <Footer />
             <div className="leaf-container">
                 <img src={leaf1} className="leaf leaf1" alt="leaf" />

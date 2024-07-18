@@ -28,11 +28,9 @@ body {
 }
 
 header {
-    /* background-color: var(--main-bg-color); */
     background-image: url("../../Assets/Images/green-background-with-plant.jpg");
     text-align: center;
     padding: var(--header-padding) 0;
-    /* background-repeat: no-repeat; */
     background-size: cover;
     position: relative;
 }
@@ -44,10 +42,9 @@ header h1 {
 
 .monkey-image {
     position: absolute;
-    /* top: 100px; Adjust this value as needed */
     right: 0;
     z-index: 1;
-    width: 350px; /* Adjust size as needed */
+    width: 350px;
     height: auto;
     animation: swing 5s linear infinite;
     transform-origin: top center;
@@ -63,9 +60,8 @@ header h1 {
 
 main {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
-
 
 .leaf-container {
     position: fixed;
@@ -75,12 +71,12 @@ main {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
-    z-index: 0; /* Ensure leaves are behind the content */
+    z-index: 0;
 }
 
 .leaf {
     position: absolute;
-    width: 100px; /* Adjust size as needed */
+    width: 100px;
     height: auto;
     animation: fly 10s ease-in-out infinite;
 }
@@ -101,9 +97,7 @@ main {
     }
 }
 
-
 #hero {
-    /* background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color)); */
     background-image: url("../../Assets/Images/4984.jpg");
     color: white;
     padding: var(--hero-padding);
@@ -112,6 +106,12 @@ main {
     height: 720px;
     background-repeat: no-repeat;
     background-size: cover;
+    /* padding-top: 50px; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
 }
 
 #hero h2 {
@@ -179,6 +179,7 @@ main {
 #story4 {
     background-image: url('../../Assets/Images/happy-mothers-day-celebration.jpg');
 }
+
 #story5 {
     background-image: url('../../Assets/Images/3d-fantasy-scene.jpg');
 }
@@ -194,10 +195,10 @@ main {
 #story8 {
     background-image: url('../../Assets/Images/cartoon-ai-robot-scene.jpg');
 }
+
 #story9 {
     background-image: url('../../Assets/Images/three-dimensional-kids-adventure-explore-moon-space.jpg');
 }
-
 
 footer {
     background-color: #333;
@@ -237,9 +238,7 @@ footer p {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    /* padding: 0; */
 }
-
 
 .header-buttons {
     margin-top: 20px;
@@ -261,7 +260,6 @@ footer p {
     background-color: #ff3300;
 }
 
-
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     header h1 {
@@ -273,6 +271,11 @@ footer p {
         width: 220px;
     }
 
+    #hero {
+        height: 600px;
+        padding: 40px 15px;
+    }
+
     #hero h2 {
         font-size: 1.8em;
     }
@@ -282,7 +285,7 @@ footer p {
     }
 
     .story-card {
-        width: 48%;
+        width: 45%;
     }
 }
 
@@ -296,6 +299,11 @@ footer p {
         width: 170px;
     }
 
+    #hero {
+        height: 500px;
+        padding: 30px 10px;
+    }
+
     #hero h2 {
         font-size: 1.5em;
     }
@@ -307,12 +315,9 @@ footer p {
 
     .story-card {
         width: 100%;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
-    #hero {
-        padding: 30px 10px;
-    }
     .header-button {
         padding: 8px 16px;
         font-size: 0.9em;
@@ -329,6 +334,11 @@ footer p {
         width: 150px;
     }
 
+    #hero {
+        height: 400px;
+        padding: 20px 10px;
+    }
+
     #hero h2 {
         font-size: 1.2em;
     }
@@ -340,10 +350,6 @@ footer p {
 
     .story-card {
         width: 100%;
-        margin: 5px 0;
-    }
-
-    #hero {
-        padding: 20px 10px;
+        margin: 10px 0;
     }
 }
