@@ -31,7 +31,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/settings">
+            <Link to="/myStories">
               <MdWebStories />
               <span>My Stories</span>
             </Link>

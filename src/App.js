@@ -18,6 +18,7 @@ import TermsAndCondition from 'Components/TermsAndCondition/TermsAndCondition';
 import Login from 'Components/Login';
 import Signup from 'Components/Signup';
 import ContactUs from 'Components/ContactUs';
+import MyStoriesPage from 'Components/MyStories/MyStoriesPage';
 
 function App() {
   return (
@@ -54,7 +55,7 @@ function Main() {
           <Route path="/privacyCenter" element={<PrivacyPolicy />} />
           <Route path="/SecurityCenter" element={<SecurityCenter />} />
           <Route path="/termsAndCondition" element={<TermsAndCondition />} />
-
+          <Route path="/myStories" element={<MyStoriesPage />} />
           <Route path="/book" element={<BookPage />} />
           <Route path="/bookTwo" element={<BookPageTwo />} />
           <Route path="/landing" element={
