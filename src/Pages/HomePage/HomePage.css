@@ -12,8 +12,8 @@
     --hero-padding: 50px 20px;
     --hero-font-size: 2em;
     --cta-font-size: 1.2em;
-    --card-width: 45%;
-    --card-margin: 10px;
+    --card-width: 30%;
+    --card-margin: 20px;
     --card-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --card-radius: 10px;
 }
@@ -28,9 +28,12 @@ body {
 }
 
 header {
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
+    background-image: url("../../Assets/Images/green-background-with-plant.jpg");
     text-align: center;
     padding: var(--header-padding) 0;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
     position: relative;
 }
 
@@ -63,11 +66,52 @@ main {
     padding: 20px;
 }
 
+
+.leaf-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0; /* Ensure leaves are behind the content */
+}
+
+.leaf {
+    position: absolute;
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    animation: fly 10s ease-in-out infinite;
+}
+
+.leaf1 { animation-delay: 0s; left: 10%; }
+.leaf2 { animation-delay: 2s; left: 30%; }
+.leaf3 { animation-delay: 4s; left: 50%; }
+.leaf4 { animation-delay: 6s; left: 70%; }
+.leaf5 { animation-delay: 8s; left: 80%; }
+.leaf6 { animation-delay: 10s; left: 100%; }
+
+@keyframes fly {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
 #hero {
-    background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color));
+    /* background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color)); */
+    background-image: url("../../Assets/Images/4984.jpg");
     color: white;
     padding: var(--hero-padding);
     position: relative;
+    width: 100%;
+    height: 720px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #hero h2 {
@@ -134,6 +178,24 @@ main {
 
 #story4 {
     background-image: url('../../Assets/Images/happy-mothers-day-celebration.jpg');
+}
+#story5 {
+    background-image: url('../../Assets/Images/3d-fantasy-scene.jpg');
+}
+
+#story6 {
+    background-image: url('../../Assets/Images/42862.jpg');
+}
+
+#story7 {
+    background-image: url('../../Assets/Images/international-day-education-scene-with-fantasy-style.jpg');
+}
+
+#story8 {
+    background-image: url('../../Assets/Images/cartoon-ai-robot-scene.jpg');
+}
+#story9 {
+    background-image: url('../../Assets/Images/three-dimensional-kids-adventure-explore-moon-space.jpg');
 }
 
 
