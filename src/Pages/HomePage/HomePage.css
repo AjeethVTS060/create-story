@@ -28,6 +28,7 @@ body {
 }
 
 header {
+     /* background-color: var(--main-bg-color); */
     background-image: url("../../Assets/Images/green-background-with-plant.jpg");
     text-align: center;
     padding: var(--header-padding) 0;
@@ -98,6 +99,7 @@ main {
 }
 
 #hero {
+        /* background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color)); */
     background-image: url("../../Assets/Images/4984.jpg");
     color: white;
     padding: var(--hero-padding);
